@@ -1,7 +1,9 @@
 <script>
+  import "virtual:windi.css";
+
   import { onMount } from "svelte";
 
-  import "virtual:windi.css";
+  import AppHeader from "~/components/AppHeader.svelte";
 
   if (!import.meta.env.PROD) {
     onMount(() => {
@@ -10,6 +12,8 @@
     });
   }
 </script>
+
+<AppHeader />
 
 <main class="p-4">
   <slot />
