@@ -1,4 +1,5 @@
 import preprocess from 'svelte-preprocess';
+import VitePluginWindicss from 'vite-plugin-windicss';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,6 +8,11 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
+		vite: {
+			plugins: [
+				VitePluginWindicss.default()
+			]
+		},
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte'
 	}
